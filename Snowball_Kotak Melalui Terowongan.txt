@@ -1,0 +1,32 @@
+/*KASUS KOTAK MELALUI TEROWONGAN*/
+/*Kelompok Snowball*/
+
+#include <stdio.h>
+
+struct kotak{
+    int p,l,t,V;
+};
+
+int main()
+{
+    int n, i, p, l, t, V;
+    i = 0;
+    printf("PROGRAM KASUS KOTAK MELALUI TEROWONGAN\n");
+    printf("\nBanyak kotak yang ingin dilewati terowongan: ", n);
+    scanf("%d", &n);
+    struct kotak ukuran[n];
+    do{
+        printf("\nMasukkan panjang, lebar, dan tinggi kotak: ", p,l,t);
+        scanf("%d %d %d", &ukuran[i].p, &ukuran[i].l, &ukuran[i].t);
+        ukuran[i].V=ukuran[i].p*ukuran[i].l*ukuran[i].t;
+        i=1+i;
+    }
+    while(i<=n-1);
+    for(i=0;i<=n-1;++i){
+        if(ukuran[i].t<41){
+            printf("\nMaka volume kotak yang bisa melewati terowongan adalah: ", ukuran[i].V);
+            printf("%d", ukuran[i].V);
+        }
+    }
+    return 0;
+}
